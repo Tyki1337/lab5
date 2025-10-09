@@ -1,0 +1,94 @@
+/* Основные стили */
+body {
+    margin: 0;
+    font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "aside"
+        "footer";
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+header {
+    grid-area: header;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    grid-area: nav;
+    background-color: #ddd;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+article {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ccc;
+}
+
+aside {
+    grid-area: aside;
+    background-color: #eee;
+    padding: 15px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "aside"
+            "footer";
+    }
+@media (min-width: 769px) {
+ .container {
+ grid-template-columns: 2fr;
+ }
+}
+
+    main {
+        grid-template-columns: 1fr;
+    }
+}
